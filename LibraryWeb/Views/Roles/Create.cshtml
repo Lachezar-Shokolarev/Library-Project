@@ -1,0 +1,78 @@
+﻿@model LibraryWeb.Models.Roles
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Roles</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CanAccessLibraryInfo" /> @Html.DisplayNameFor(model => model.CanAccessLibraryInfo)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CanReserveItems" /> @Html.DisplayNameFor(model => model.CanReserveItems)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CanRegisterItems" /> @Html.DisplayNameFor(model => model.CanRegisterItems)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CanModifyItemsInfo" /> @Html.DisplayNameFor(model => model.CanModifyItemsInfo)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CanRegisterBorrowing" /> @Html.DisplayNameFor(model => model.CanRegisterBorrowing)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CanRegisterReturning" /> @Html.DisplayNameFor(model => model.CanRegisterReturning)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CanModifyItemLocation" /> @Html.DisplayNameFor(model => model.CanModifyItemLocation)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CanApproveReaderRegistration" /> @Html.DisplayNameFor(model => model.CanApproveReaderRegistration)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CanManageUsers" /> @Html.DisplayNameFor(model => model.CanManageUsers)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CanChangeUserRoles" /> @Html.DisplayNameFor(model => model.CanChangeUserRoles)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

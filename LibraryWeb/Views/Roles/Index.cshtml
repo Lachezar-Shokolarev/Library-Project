@@ -1,0 +1,89 @@
+﻿@model IEnumerable<LibraryWeb.Models.Roles>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CanAccessLibraryInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CanReserveItems)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CanRegisterItems)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CanModifyItemsInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CanRegisterBorrowing)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CanRegisterReturning)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CanModifyItemLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CanApproveReaderRegistration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CanManageUsers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CanChangeUserRoles)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CanAccessLibraryInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CanReserveItems)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CanRegisterItems)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CanModifyItemsInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CanRegisterBorrowing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CanRegisterReturning)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CanModifyItemLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CanApproveReaderRegistration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CanManageUsers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CanChangeUserRoles)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RoleID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RoleID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RoleID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
